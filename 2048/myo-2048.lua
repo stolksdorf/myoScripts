@@ -1,6 +1,11 @@
 scriptId = 'com.stolksdorf.2048'
 schemeId = 'com.stolksdorf.2048'
 
+
+function string.starts(String,Start)
+   return string.sub(String,1,string.len(Start))==Start
+end
+
 -- Makes use of myo.getArm() to swap wave out and wave in when the armband is being worn on
 -- the left arm. This allows us to treat wave out as wave right and wave in as wave
 -- left for consistent direction. The function has no effect on other poses.
@@ -34,7 +39,7 @@ function onPoseEdge(pose, edge)
 end
 
 function onForegroundWindowChange(app, title)
-	if string.find(title, 2048) and string.find(title, 'Sublime') == nil then
+	if string.starts(title, '2048') then
 		return true
 	end
 	return false
