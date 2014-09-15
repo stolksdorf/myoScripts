@@ -1,8 +1,8 @@
 scriptId = 'com.stolksdorf.events'
 schemeId = 'com.stolksdorf.events'
 
+--Events
 myo._events = {}
-
 myo.trigger = function(eventName, ...)
 	args = {...}
 	for i, event in ipairs(myo._events) do
