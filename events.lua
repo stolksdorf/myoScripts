@@ -16,13 +16,23 @@ myo.on = function(name, fn)
 end
 
 
---[[Tests
-myo.on('test', function(a, b) myo.debug(tostring(b)) end)
+
+
+
+
+
+
+myo.on('test', function(a, b)
+	myo.debug(tostring(b))
+end)
+
+
+
 myo.on('test', function(a, b) myo.debug(tostring(a)) end)
 myo.on('test2', function(a, b) myo.debug('WOAH') end)
 
 myo.trigger('test2', 'cool', 'so cool')
-]]
+
 
 
 

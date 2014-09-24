@@ -23,7 +23,7 @@ myo.armBusyData = 0
 ema_alpha = 0.1
 armBusyThreshold = 80
 function armBusyPeriodic()
-	ema = myo.armBusyData + ema_alpha * (math.abs(myo.getGyro.X()) + math.abs(myo.getGyro.Y()) + math.abs(myo.getGyro.Z()) - myo.armBusyData);
+	ema = myo.armBusyData + ema_alpha * (math.abs(myo.getGyroX()) + math.abs(myo.getGyroY()) + math.abs(myo.getGyroZ()) - myo.armBusyData);
 
 
 	if ema > armBusyThreshold then
@@ -40,7 +40,9 @@ function onPoseEdge(pose, edge)
 end
 
 
-
+function activeAppName()
+    return "Output Everything"
+end
 
 
 function onPeriodic()
